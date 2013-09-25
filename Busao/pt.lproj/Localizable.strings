@@ -21,6 +21,9 @@
 "onibus_no_ponto" = "ônibus no ponto";
 "pontos_proximos_pino" = "Busque os pontos de ônibus próximos ao pino";
 "pontos_proximos" = "Pontos próximos";
+"tarifas" = "Tarifas";
+"inteira" = "Inteira";
+"meia" = "Meia";
 
 
 "If you enjoy using %@, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!" = "Se você está gostando de usar o %@, poderia nos dar um feedback para que possamos sempre melhorar? Não demora mais que um minuto. Obrigado pela colaboração!";
