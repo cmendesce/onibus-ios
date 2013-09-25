@@ -1,0 +1,24 @@
+{
+"tarifas": [
+    {
+        "descricao": "Tarifa Convencional",
+        "valorInteira": "2.20",
+        "valorMeia": "1.10"
+    },
+    {
+        "descricao": "Tarifa Social (domingos, dia 13 de abril, Réveillon e 1º de janeiro)",
+        "valorInteira": "1.60",
+        "valorMeia": "1.80"
+    },
+    {
+        "descricao": "Hora Social (segunda a sábado, de 9 às 10h e de 15 às 16h)",
+        "valorInteira": "2.00",
+        "valorMeia": "1.00"
+    },
+    {
+        "descricao": "Linha Central",
+        "valorInteira": "0.40",
+        "valorMeia": "0.20"
+    }
+]
+}

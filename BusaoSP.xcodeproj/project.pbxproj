@@ -76,6 +76,8 @@
 		20F5804C1535267500F1CAAB /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F5804A1535267500F1CAAB /* compass.png */; };
 		20F5804D1535267500F1CAAB /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20F5804B1535267500F1CAAB /* compass@2x.png */; };
 		20F5805C1535F76700F1CAAB /* GPSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20F5805B1535F76700F1CAAB /* GPSManager.m */; };
+		50293B5417F2549E005173D6 /* TarifasController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50293B5317F2549E005173D6 /* TarifasController.m */; };
+		50293B5917F25C1E005173D6 /* tarifas.json in Resources */ = {isa = PBXBuildFile; fileRef = 50293B5817F25C1E005173D6 /* tarifas.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,6 +183,9 @@
 		20F5804B1535267500F1CAAB /* compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass@2x.png"; sourceTree = "<group>"; };
 		20F5805A1535F76700F1CAAB /* GPSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSManager.h; sourceTree = "<group>"; };
 		20F5805B1535F76700F1CAAB /* GPSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSManager.m; sourceTree = "<group>"; };
+		50293B5217F2549E005173D6 /* TarifasController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TarifasController.h; sourceTree = "<group>"; };
+		50293B5317F2549E005173D6 /* TarifasController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TarifasController.m; sourceTree = "<group>"; };
+		50293B5817F25C1E005173D6 /* tarifas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tarifas.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +366,8 @@
 				20D8E413152B77DC006C7328 /* PontosPorProximidadeController.h */,
 				20D8E414152B77DC006C7328 /* PontosPorProximidadeController.m */,
 				20B974FC15360CA2008DAD44 /* SemGps.xib */,
+				50293B5217F2549E005173D6 /* TarifasController.h */,
+				50293B5317F2549E005173D6 /* TarifasController.m */,
 			);
 			name = Telas;
 			sourceTree = "<group>";
@@ -433,6 +440,7 @@
 				20EB21B9152D04270009BC49 /* whiteArrow@2x.png */,
 				20F5804A1535267500F1CAAB /* compass.png */,
 				20F5804B1535267500F1CAAB /* compass@2x.png */,
+				50293B5817F25C1E005173D6 /* tarifas.json */,
 			);
 			name = Imagens;
 			sourceTree = "<group>";
@@ -492,6 +500,7 @@
 				20D8E3C4152B6241006C7328 /* 088-Map.png in Resources */,
 				20D8E3C6152B6250006C7328 /* 088-Map@2x.png in Resources */,
 				20D8E3CB152B66A2006C7328 /* 082-Location@2x.png in Resources */,
+				50293B5917F25C1E005173D6 /* tarifas.json in Resources */,
 				20D8E3CD152B66B0006C7328 /* 082-Location.png in Resources */,
 				20D8E3DF152B6825006C7328 /* SSVignetteiPhone.png in Resources */,
 				20D8E3E0152B6825006C7328 /* SSVignetteiPhone@2x.png in Resources */,
@@ -536,6 +545,7 @@
 				20EB21AA152CFBAA0009BC49 /* EGORefreshTableHeaderView.m in Sources */,
 				20D8E412152B76C8006C7328 /* ListaPontoDeOnibusController.m in Sources */,
 				208A1C291524F7FE00335F87 /* main.m in Sources */,
+				50293B5417F2549E005173D6 /* TarifasController.m in Sources */,
 				208A1C2D1524F7FE00335F87 /* AppDelegate.m in Sources */,
 				208A1C351524FB1700335F87 /* Ponto.m in Sources */,
 				208A1C391524FB7100335F87 /* Onibus.m in Sources */,
