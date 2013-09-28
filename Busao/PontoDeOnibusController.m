@@ -110,7 +110,7 @@
 - (void) recebeParadas: (NSArray *) paradas paraOnibus: (Onibus *) onibus {
     [loading completeQuicklyWithTitle:NSLocalized(@"pronto")];
     
-    ParadasViewController *paradasController = [[ParadasViewController alloc] initWithParadas:paradas doOnibus:onibus paraLocalizaca:onibus.ponto.localizacao];    
+    ParadasViewController *paradasController = [[ParadasViewController alloc] initWithParadas:paradas doOnibus:onibus paraLocalizaca:onibus.ponto.localizacao];
     [self.navigationController pushViewController:paradasController animated:YES];
 }
 - (void) problemaParaBuscarParadas {
