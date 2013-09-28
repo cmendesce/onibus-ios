@@ -19,19 +19,23 @@ static NSString *identifier = @"view";
         return nil;
     
     MKAnnotationView *annotationView = (MKAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
     if (annotationView == nil) {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
     } else {
         annotationView.annotation = annotation;
     }
+    
     annotationView.enabled = YES;
     annotationView.selected = NO;
-    annotationView.rightCalloutAccessoryView = nil;
+    annotationView.leftCalloutAccessoryView=[UIButton buttonWithType:UIButtonTypeInfoLight];
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     annotationView.canShowCallout = YES;
-    if([annotation isKindOfClass:[Localizacao class]]){
+    
+    if ([annotation isKindOfClass:[Localizacao class]]) {
         annotationView.canShowCallout = NO;
         annotationView.image = [UIImage imageNamed:@"pin-current.png"];
-    }else if([annotation isKindOfClass:[Ponto class]]){
+    } else if ([annotation isKindOfClass:[Ponto class]]) {
         UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = infoButton;
         annotationView.image = [UIImage imageNamed:@"pin-busstop.png"];
