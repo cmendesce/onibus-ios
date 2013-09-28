@@ -64,6 +64,7 @@
         if([self mesmaParadaParaLocalizacao: annotation]){
             annotationView.image = [UIImage imageNamed:@"pin-bus-selected.png"];
             annotationView.selected = YES;
+            annotationView.canShowCallout = YES;
         }
     }
     

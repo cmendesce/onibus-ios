@@ -52,7 +52,9 @@
     
     self.view = mapView;
     [self.view addSubview:[UILabel detailLabelWithText:NSLocalized(@"pontos_proximos_pino")]];
+    
 }
+
 - (void) applicationDidBecomeActive {
     if([GPSManager isGPSDisabled]){
         self.navigationItem.leftBarButtonItem = NULL;
@@ -61,10 +63,12 @@
         self.navigationItem.leftBarButtonItem = buttonItem;        
     }
 }
-- (void) criaDropPin{
+
+- (void) criaDropPin {
     UIBarButtonItem *dropPin = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"242-Aim.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(atualizarLocalizacao)];
     self.navigationItem.rightBarButtonItem = dropPin;
 }
+
 - (void) criaSpinner {
     UIActivityIndicatorView *activityIndicator = 
     [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
@@ -73,9 +77,12 @@
     self.navigationItem.rightBarButtonItem = barButton;
     [activityIndicator startAnimating];
 }
+
+#pragma - mark MKMapViewDelegate
+
 - (void)mapView:(MKMapView *)_mapView didUpdateUserLocation:(MKUserLocation *)userLocation      {
     CLLocationAccuracy accuracy = userLocation.location.horizontalAccuracy;
-    if(accuracy >= 30 && !jaBuscouUsuario){
+    if (accuracy >= 30 && !jaBuscouUsuario) {
         jaBuscouUsuario = YES;
         self.mapView.showsUserLocation = false;
         Localizacao *localizacao = [[Localizacao alloc] initWithLatitude:mapView.userLocation.coordinate.latitude eLongitude:mapView.userLocation.coordinate.longitude];
@@ -90,20 +97,25 @@
 - (MKAnnotationView *)mapView:(MKMapView *)_mapView viewForAnnotation:(id <MKAnnotation>)annotation {   
     return [AnnotationViewFactory createViewForAnnotation: annotation inMapView:_mapView];
 }
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    /*if(![view.annotation isKindOfClass:[Ponto class]])
+        return;*/
+    
+    Ponto *ponto = (Ponto *) view.annotation;
+    
+    PontoDeOnibusController *onibusController = [[PontoDeOnibusController alloc] initWithPonto:ponto];
+    [self.navigationController pushViewController:onibusController animated:YES];
+}
+
+#pragma - mark LocationManager
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     if ([error code]== kCLAuthorizationStatusDenied || [error code] == kCLAuthorizationStatusRestricted) 
      {
         UIBarButtonItem *erroButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"253-Info.png"] style:UIBarButtonSystemItemDone target:self action:@selector(semAcessoAoGPS)];
         self.navigationItem.leftBarButtonItem = erroButton;
      }
-}
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    if(![view.annotation isKindOfClass:[Ponto class]])
-        return;
-    Ponto *ponto = (Ponto *) view.annotation;
-    
-    PontoDeOnibusController *onibusController = [[PontoDeOnibusController alloc] initWithPonto:ponto];
-    [self.navigationController pushViewController:onibusController animated:YES]; 
 }
 - (void)atualizarLocalizacao{
     [self criaSpinner];
